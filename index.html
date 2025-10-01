@@ -1,65 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resume — Henry Soicher</title>
-
-  <!-- Raleway font -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
-
-  <!-- Force HTTPS (safe to keep even after cert is active) -->
-  <script>
-    if (location.protocol !== 'https:' && location.hostname.endsWith('hire-henry.com')) {
-      location.href = 'https://' + location.host + location.pathname + location.search + location.hash;
-    }
-  </script>
-
-  <!-- Plausible Analytics (simple, cookie-free). View data in your Plausible dashboard. -->
-  <script defer data-domain="hire-henry.com" src="https://plausible.io/js/script.js"></script>
-
-  <!-- If you prefer Google Analytics (GA4), remove Plausible above and UNCOMMENT this block.
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); // replace with your GA4 Measurement ID
-  </script>
-  -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Henry</title>
   <style>
-    :root { --off-black: #111111; }
-    html, body {
-      height: 100%;
+    body, html {
       margin: 0;
-      background: #ffffff;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
     }
-    body {
-      display: grid;
-      place-items: center;
-      font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+    .cover {
+      background: url('Hire-Henry-Cover.webp') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* aligns link to bottom */
     }
-    a.resume {
-      color: var(--off-black);
-      font-weight: 700;
-      font-size: clamp(3rem, 12vw, 8rem);
+
+    .resume-link {
+      margin-bottom: 20vh; /* pushes it up 20% from the bottom */
+      background: rgba(255, 255, 255, 0.8);
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
-      letter-spacing: 0.04em;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #000;
+      transition: background 0.3s ease;
     }
-    a.resume:hover {
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-    }
-    a.resume:focus-visible {
-      outline: 3px solid var(--off-black);
-      outline-offset: 6px;
-      border-radius: 6px;
+
+    .resume-link:hover {
+      background: rgba(255, 255, 255, 1);
     }
   </style>
 </head>
 <body>
-  <!-- PDF should be in the repo root next to index.html -->
-  <a class="resume" href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">RESUME</a>
+  <div class="cover">
+    <a class="resume-link" href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
+  </div>
 </body>
 </html>
