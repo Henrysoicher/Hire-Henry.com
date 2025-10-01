@@ -11,8 +11,8 @@
   <style>
     :root {
       --orange: #ff931e;
-      --gap: 16px;
-      --maxW: 560px; /* make image larger on desktop */
+      --gap: 28px;     /* increased vertical space between image & button */
+      --maxW: 520px;   /* slightly smaller image cap for balance */
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,7 +50,7 @@
       font-weight: 800;
       font-family: "Raleway", system-ui, sans-serif;
       letter-spacing: 0.06em;
-      font-size: clamp(24px, 7vw, 44px); /* slightly larger across devices */
+      font-size: clamp(24px, 7vw, 44px);
       border-bottom: 3px solid transparent;
       transition: border-color 120ms ease;
     }
