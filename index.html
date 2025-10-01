@@ -3,15 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resume Link</title>
+  <title>Resume — Henry Soicher</title>
 
   <!-- Raleway font -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --off-black: #111111;
+  <!-- Force HTTPS (safe to keep even after cert is active) -->
+  <script>
+    if (location.protocol !== 'https:' && location.hostname.endsWith('hire-henry.com')) {
+      location.href = 'https://' + location.host + location.pathname + location.search + location.hash;
     }
+  </script>
+
+  <!-- Plausible Analytics (simple, cookie-free). View data in your Plausible dashboard. -->
+  <script defer data-domain="hire-henry.com" src="https://plausible.io/js/script.js"></script>
+
+  <!-- If you prefer Google Analytics (GA4), remove Plausible above and UNCOMMENT this block.
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // replace with your GA4 Measurement ID
+  </script>
+  -->
+
+  <style>
+    :root { --off-black: #111111; }
     html, body {
       height: 100%;
       margin: 0;
@@ -31,10 +49,17 @@
     }
     a.resume:hover {
       text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    a.resume:focus-visible {
+      outline: 3px solid var(--off-black);
+      outline-offset: 6px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <a class="resume" href="Henry-Soicher-Resume.pdf" target="_blank">RESUME</a>
+  <!-- PDF should be in the repo root next to index.html -->
+  <a class="resume" href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">RESUME</a>
 </body>
 </html>
