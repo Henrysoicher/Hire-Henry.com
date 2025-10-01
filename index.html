@@ -9,27 +9,27 @@
       margin: 0;
       padding: 0;
       font-family: "Raleway", sans-serif;
-      height: 100vh;               /* full screen height */
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* image on top, link on bottom */
+      justify-content: space-between;
       align-items: center;
       text-align: center;
     }
 
     .hero img {
-      height: 80vh;       /* take 80% of viewport height */
-      max-width: 95vw;    /* prevent overflow */
-      object-fit: cover;  /* crop if needed but fill space */
+      height: 80vh;
+      max-width: 95vw;
+      object-fit: cover;
       border-radius: 20px;
     }
 
     .resume-link {
-      margin-bottom: 40px; /* space up from bottom */
+      margin-bottom: 40px;
     }
 
     .resume-link a {
-      font-size: 28px;
+      font-size: 42px;   /* large on desktop */
       font-weight: 700;
       text-transform: uppercase;
       color: black;
@@ -38,6 +38,28 @@
 
     .resume-link a:hover {
       text-decoration: underline;
+    }
+
+    /* 📱 Mobile responsiveness */
+    @media (max-width: 768px) {
+      .hero img {
+        height: 60vh;   /* smaller on mobile */
+        border-radius: 12px;
+      }
+
+      .resume-link a {
+        font-size: 28px; /* shrink text size for small screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero img {
+        height: 55vh;
+      }
+
+      .resume-link a {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
