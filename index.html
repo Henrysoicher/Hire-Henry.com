@@ -10,9 +10,9 @@
 
   <style>
     :root {
-      --page-pad: 18px;
-      --radius: 22px;
       --offblack: #111;
+      --gap: 14px;
+      --maxW: 420px; /* cap size for desktop */
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,30 +23,28 @@
       color: var(--offblack);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-start;
-      padding: var(--page-pad);
+      padding: 24px;
     }
 
-    .hero {
+    .stack {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      max-width: 720px;
+      gap: var(--gap);
       width: 100%;
+      max-width: var(--maxW);
     }
 
-    .hero img {
+    .cover {
       width: 100%;
       height: auto;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: var(--radius);
+      display: block;
+      border-radius: 20px;
     }
 
-    .cta a {
+    .cta {
       color: var(--offblack);
       text-decoration: none;
       text-transform: uppercase;
@@ -58,19 +56,17 @@
       transition: border-color 120ms ease;
     }
 
-    .cta a:hover,
-    .cta a:focus-visible {
+    .cta:hover,
+    .cta:focus-visible {
       border-bottom-color: currentColor;
       outline: none;
     }
   </style>
 </head>
 <body>
-  <main class="hero">
-    <img src="Hire-Henry-Cover.webp" alt="Henry on the water with mountains in the background" />
-    <div class="cta">
-      <a href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-    </div>
+  <main class="stack">
+    <img class="cover" src="Hire-Henry-Cover.webp" alt="This is Henry. You should hire him." />
+    <a class="cta" href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">Resume</a>
   </main>
 </body>
 </html>
