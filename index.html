@@ -18,7 +18,7 @@
     }
 
     .hero img {
-      height: 80vh;
+      height: 80vh;          /* desktop: tall hero */
       max-width: 95vw;
       object-fit: cover;
       border-radius: 20px;
@@ -29,7 +29,7 @@
     }
 
     .resume-link a {
-      font-size: 42px;   /* large on desktop */
+      font-size: 42px;       /* big text on desktop */
       font-weight: 700;
       text-transform: uppercase;
       color: black;
@@ -40,21 +40,24 @@
       text-decoration: underline;
     }
 
-    /* 📱 Mobile responsiveness */
+    /* 📱 Tablet and smaller */
     @media (max-width: 768px) {
       .hero img {
-        height: 60vh;   /* smaller on mobile */
+        width: 90vw;         /* fit by width */
+        height: auto;        /* natural height */
         border-radius: 12px;
       }
 
       .resume-link a {
-        font-size: 28px; /* shrink text size for small screens */
+        font-size: 28px;
       }
     }
 
+    /* 📱 Phone */
     @media (max-width: 480px) {
       .hero img {
-        height: 55vh;
+        width: 95vw;
+        height: auto;
       }
 
       .resume-link a {
