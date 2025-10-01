@@ -5,43 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hire Henry</title>
   <style>
-    body, html {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: sans-serif;
+      text-align: center;
+      font-family: Arial, sans-serif;
     }
 
-    .cover {
-      background: url('Hire-Henry-Cover.webp') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end; /* aligns link to bottom */
+    .hero {
+      margin-top: 20px;
+    }
+
+    .hero img {
+      width: 300px; /* adjust to make image smaller */
+      border-radius: 20px;
     }
 
     .resume-link {
-      margin-bottom: 20vh; /* pushes it up 20% from the bottom */
-      background: rgba(255, 255, 255, 0.8);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #000;
-      transition: background 0.3s ease;
+      margin-top: 15px;
     }
 
-    .resume-link:hover {
-      background: rgba(255, 255, 255, 1);
+    .resume-link a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #f1f1f1;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+
+    .resume-link a:hover {
+      background: #ddd;
     }
   </style>
 </head>
 <body>
-  <div class="cover">
-    <a class="resume-link" href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
+  <div class="hero">
+    <img src="henry-photo.jpg" alt="Henry"> <!-- replace with your actual image path -->
+    <div class="resume-link">
+      <a href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
+    </div>
   </div>
 </body>
 </html>
