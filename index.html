@@ -5,99 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hire Henry</title>
 
-  <!-- Raleway (for that Railway all-caps look) -->
+  <!-- Raleway font -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --page-pad: 18px;
       --radius: 22px;
+      --offblack: #111;
     }
 
-    * { box-sizing: border-box; }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: #fff;
-      color: #111;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    .page {
-      min-height: 100svh;           /* safe viewport on iOS */
+      font-family: "Raleway", system-ui, sans-serif;
+      background: #fff;
+      color: var(--offblack);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       padding: var(--page-pad);
-      gap: 20px;
     }
 
-    /* Top image area */
     .hero {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding-top: 6px;              /* clears the iOS status bar notch visually */
-      flex: 1;                       /* pushes CTA toward the bottom on tall screens */
+      gap: 20px;
+      max-width: 720px;
+      width: 100%;
     }
 
     .hero img {
       width: 100%;
       height: auto;
-      max-height: min(80svh, 900px); /* desktop can still get big; mobile keeps it contained */
-      object-fit: contain;           /* prevents side cropping on mobile */
+      max-height: 80vh;
+      object-fit: contain;
       border-radius: var(--radius);
-      display: block;
-    }
-
-    /* CTA link */
-    .cta {
-      display: flex;
-      justify-content: center;
-      padding-bottom: calc(20px + env(safe-area-inset-bottom));
     }
 
     .cta a {
+      color: var(--offblack);
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 800;
+      font-family: "Raleway", system-ui, sans-serif;
       letter-spacing: 0.06em;
-      /* Big, responsive type (≈50% larger than a typical 20–24px button) */
-      font-size: clamp(22px, 6.2vw, 40px);
-      line-height: 1.1;
-      border-bottom: 3px solid transparent;  /* underline on hover only */
+      font-size: clamp(22px, 6vw, 36px);
+      border-bottom: 3px solid transparent;
       transition: border-color 120ms ease;
     }
+
     .cta a:hover,
     .cta a:focus-visible {
       border-bottom-color: currentColor;
       outline: none;
     }
-
-    /* Desktop tweaks */
-    @media (min-width: 768px) {
-      .page { 
-        gap: 28px;
-        padding: 28px;
-      }
-      .hero img {
-        max-width: 720px;            /* keeps it elegant on large screens */
-      }
-    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero" aria-label="Cover">
-      <img src="Hire-Henry-Cover.webp" alt="Henry on the water with mountains in the background" />
-    </section>
-
-    <nav class="cta" aria-label="Resume link">
+  <main class="hero">
+    <img src="Hire-Henry-Cover.webp" alt="Henry on the water with mountains in the background" />
+    <div class="cta">
       <a href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-    </nav>
+    </div>
   </main>
 </body>
 </html>
