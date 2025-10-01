@@ -1,78 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hire Henry</title>
+
+  <!-- Raleway (for that Railway all-caps look) -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    :root {
+      --page-pad: 18px;
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
-      font-family: "Raleway", sans-serif;
-      height: 100vh;
+      background: #fff;
+      color: #111;
+    }
+
+    body {
+      font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      min-height: 100svh;           /* safe viewport on iOS */
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      padding: var(--page-pad);
+      gap: 20px;
+    }
+
+    /* Top image area */
+    .hero {
+      display: flex;
+      justify-content: center;
       align-items: center;
-      text-align: center;
+      padding-top: 6px;              /* clears the iOS status bar notch visually */
+      flex: 1;                       /* pushes CTA toward the bottom on tall screens */
     }
 
     .hero img {
-      height: 80vh;          /* desktop: tall hero */
-      max-width: 95vw;
-      object-fit: cover;
-      border-radius: 20px;
+      width: 100%;
+      height: auto;
+      max-height: min(80svh, 900px); /* desktop can still get big; mobile keeps it contained */
+      object-fit: contain;           /* prevents side cropping on mobile */
+      border-radius: var(--radius);
+      display: block;
     }
 
-    .resume-link {
-      margin-bottom: 40px;
+    /* CTA link */
+    .cta {
+      display: flex;
+      justify-content: center;
+      padding-bottom: calc(20px + env(safe-area-inset-bottom));
     }
 
-    .resume-link a {
-      font-size: 42px;       /* big text on desktop */
-      font-weight: 700;
-      text-transform: uppercase;
-      color: black;
+    .cta a {
       text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      /* Big, responsive type (≈50% larger than a typical 20–24px button) */
+      font-size: clamp(22px, 6.2vw, 40px);
+      line-height: 1.1;
+      border-bottom: 3px solid transparent;  /* underline on hover only */
+      transition: border-color 120ms ease;
+    }
+    .cta a:hover,
+    .cta a:focus-visible {
+      border-bottom-color: currentColor;
+      outline: none;
     }
 
-    .resume-link a:hover {
-      text-decoration: underline;
-    }
-
-    /* 📱 Tablet and smaller */
-    @media (max-width: 768px) {
+    /* Desktop tweaks */
+    @media (min-width: 768px) {
+      .page { 
+        gap: 28px;
+        padding: 28px;
+      }
       .hero img {
-        width: 90vw;         /* fit by width */
-        height: auto;        /* natural height */
-        border-radius: 12px;
-      }
-
-      .resume-link a {
-        font-size: 28px;
-      }
-    }
-
-    /* 📱 Phone */
-    @media (max-width: 480px) {
-      .hero img {
-        width: 95vw;
-        height: auto;
-      }
-
-      .resume-link a {
-        font-size: 24px;
+        max-width: 720px;            /* keeps it elegant on large screens */
       }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <img src="Hire-Henry-Cover.webp" alt="Henry">
-  </div>
+  <main class="page">
+    <section class="hero" aria-label="Cover">
+      <img src="Hire-Henry-Cover.webp" alt="Henry on the water with mountains in the background" />
+    </section>
 
-  <div class="resume-link">
-    <a href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
-  </div>
+    <nav class="cta" aria-label="Resume link">
+      <a href="Henry-Soicher-Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+    </nav>
+  </main>
 </body>
 </html>
