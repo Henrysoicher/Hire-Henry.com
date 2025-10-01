@@ -8,24 +8,28 @@
     body {
       margin: 0;
       padding: 0;
+      font-family: "Raleway", sans-serif;
+      height: 100vh;               /* full screen height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* image on top, link on bottom */
+      align-items: center;
       text-align: center;
-      font-family: "Raleway", sans-serif; /* guessing you meant Raleway */
-    }
-
-    .hero {
-      margin-top: 40px;
     }
 
     .hero img {
-      width: 300px;        /* adjust size as needed */
+      height: 80vh;       /* take 80% of viewport height */
+      max-width: 95vw;    /* prevent overflow */
+      object-fit: cover;  /* crop if needed but fill space */
+      border-radius: 20px;
     }
 
     .resume-link {
-      margin-top: 30px;
+      margin-bottom: 40px; /* space up from bottom */
     }
 
     .resume-link a {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
       text-transform: uppercase;
       color: black;
@@ -40,10 +44,10 @@
 <body>
   <div class="hero">
     <img src="Hire-Henry-Cover.webp" alt="Henry">
-    
-    <div class="resume-link">
-      <a href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
-    </div>
+  </div>
+
+  <div class="resume-link">
+    <a href="Henry-Soicher-Resume.pdf" target="_blank">View Resume</a>
   </div>
 </body>
 </html>
